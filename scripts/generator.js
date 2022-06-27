@@ -11,7 +11,7 @@ var xmlfinal = "";
 
 console.log(
   chalk.red(
-    figlet.textSync("Architecture Diagrams Generator", {
+    figlet.textSync("Diagrams Generator", {
       horizontalLayout: "default",
       verticalLayout: "default",
       width: 80,
@@ -49,34 +49,6 @@ for (var i = 0; i < process.argv.length; i++) {
 }
 
 console.log("filename: " + filename);
-
-/*
-xmlfinal += box("HELLO WORLD");
-xmlfinal += box("GOODBY WORLD");
-xmlfinal += box("SOMTHING WORLD");
-xmlfinal += box("THIS APLICATION REPLACES FULL WORLD");
-xmlfinal += box("SUPERCALIFRAGILISTICO ESPIRALIDOSO");
-
-xmlfinal += arrow("HELLO WORLD", "GOODBY WORLD", "life is hard");
-xmlfinal = arrow("HELLO WORLD", "SOMTHING WORLD", "life is green") + xmlfinal;
-xmlfinal =
-  arrow(
-    "SOMTHING WORLD",
-    "THIS APLICATION REPLACES FULL WORLD",
-    "life is broken"
-  ) + xmlfinal;
-xmlfinal =
-  arrow(
-    "GOODBY WORLD",
-    "THIS APLICATION REPLACES FULL WORLD",
-    "life is short"
-  ) + xmlfinal;
-xmlfinal =
-  arrow("GOODBY WORLD", "SUPERCALIFRAGILISTICO ESPIRALIDOSO", "life is soft") +
-  xmlfinal;
-
-console.log(xmlfinal);
-*/
 
 xmlfinal = processCSV("templates/application.csv");
 

@@ -12,13 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://sourcerepository-tc.shared-nonprod.cloud.si.orange.es/coearquitectura/crazy-pocs/diagramgenerator-library-typescript.git"
+    "url": "https://github.com/Tschuss/diagramgenerator.git"
   },
   "keywords": [
     "diagram",
-    "generator"
+    "generator",
+    "draw.io"
   ],
-  "author": "Arquitectura Orange",
-  "license": "ISC",
+  "author": "Tschuss",
+  "license": "none",
   "devDependencies": {}
 }
