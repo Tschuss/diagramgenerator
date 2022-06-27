@@ -1,0 +1,24 @@
+{
+  "name": "diagramgenerator",
+  "version": "1.0.0",
+  "description": "generador de diagramas en formato Drawio xml",
+  "main": "generator.js",
+  "scripts": {
+    "start": "node scripts/generator.js"
+  },
+  "dependencies": {
+    "figlet": "~1.5.0",
+    "chalk": "~4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sourcerepository-tc.shared-nonprod.cloud.si.orange.es/coearquitectura/crazy-pocs/diagramgenerator-library-typescript.git"
+  },
+  "keywords": [
+    "diagram",
+    "generator"
+  ],
+  "author": "Arquitectura Orange",
+  "license": "ISC",
+  "devDependencies": {}
+}
