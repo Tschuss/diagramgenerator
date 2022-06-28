@@ -9,9 +9,7 @@ function arrow(from, to, text) {
   var to_id = from_to.to.id;
 
   console.log(
-    chalk.green(
-      "Arrow from: " + from + " to: " + to + " entry: " + from_to.entry
-    )
+    chalk.blue("Arrow " + from + "--> " + to + " (" + from_to.entry + ")")
   );
   //console.log(from + ": " + from_id);
   //console.log(to + ": " + to_id);

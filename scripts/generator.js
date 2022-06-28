@@ -31,8 +31,12 @@ figlet("Diagram Generator", function (err, data) {
 });
 */
 
-var filename = new Date().getTime() + ".xml";
+var diagramId = Date.now();
+var filename = diagramId + ".xml";
 
+console.log("Diagram ID: " + diagramId);
+
+/*
 console.log("Argumentos => " + process.argv);
 for (var i = 0; i < process.argv.length; i++) {
   if (process.argv[i] == null || process.argv[i] != "") {
@@ -47,13 +51,9 @@ for (var i = 0; i < process.argv.length; i++) {
     }
   }
 }
-
-console.log("filename: " + filename);
+*/
 
 xmlfinal = processCSV("templates/application.csv");
-
-var diagramId = Date.now();
-console.log("Diagram ID: " + diagramId);
 
 fs.writeFileSync(
   path + "\\" + filename,
