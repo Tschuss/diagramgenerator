@@ -24,15 +24,17 @@ function box(name) {
 }
 
 function obox(name) {
-  var id = ids.getID(name).id;
-  console.log(chalk.blue("Box " + name + ": " + id));
+  var id_parent = ids.getID(name).id;
+  var id_child = ids.getID(name + "-title").id;
+
+  console.log(chalk.blue("Box " + name + ": " + id_parent));
 
   var size = getSize(name);
 
   var xml =
     '<mxCell id="' +
-    id +
-    '-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">' +
+    id_parent +
+    '" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">' +
     '<mxGeometry x="360" y="360" width="' +
     size.width +
     '" height="' +
@@ -40,12 +42,12 @@ function obox(name) {
     '" as="geometry" />' +
     "</mxCell>" +
     '<mxCell id="' +
-    id +
-    '-2" value="' +
+    id_child +
+    '" value="' +
     name +
     '" style="rounded=0;whiteSpace=wrap;html=1;arcSize=27;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="' +
-    id +
-    '-1">' +
+    id_parent +
+    '">' +
     '<mxGeometry x="0" y="0" width="' +
     size.width +
     '" height="' +

@@ -49,7 +49,7 @@ function mdw(numero) {
     "</mxCell>" +
     '<mxCell id="' +
     id +
-    '-2" value="' +
+    '" value="' +
     (numero != null ? numero : "") +
     '" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="yprXkgl_wh5ysjy9TSO6-7">' +
     '<mxGeometry x="4" y="5.5" width="40" height="20" as="geometry" />' +
