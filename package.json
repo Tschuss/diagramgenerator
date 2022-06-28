@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node scripts/generator.js",
     "diagram": "node scripts/generator.js",
-    "generate": "node scripts/generator.js"
+    "generator": "node scripts/generator.js"
   },
   "dependencies": {
     "figlet": "~1.5.0",

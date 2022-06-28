@@ -31,8 +31,10 @@ function arrow(from, to, text) {
     '" target="' +
     to_id +
     '">' +
-    '<mxGeometry relative="1" as="geometry" />\n' +
-    "</mxCell>\n";
+    //mueve el texto de la flecha hacia el lado de la punta
+    '<mxGeometry x="0.5" relative="1" as="geometry" />\n\r' +
+    '<mxPoint as="offset" />\n\r' +
+    "</mxCell>\n\r";
 
   return xml;
 }

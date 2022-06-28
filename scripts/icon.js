@@ -8,8 +8,8 @@ icons.set(
     '" value="" style="' +
     fs.readFileSync("templates/apigee.svg") +
     '" vertex="1" parent="1">' +
-    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />' +
-    "</mxCell>"
+    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />\n\r' +
+    "</mxCell>\n\r"
 );
 icons.set(
   "MDW",
@@ -18,8 +18,8 @@ icons.set(
     '" value="" style=""' +
     fs.readFileSync("templates/apigee.svg") +
     '" vertex="1" parent="1">' +
-    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />' +
-    "</mxCell>"
+    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />\n\r' +
+    "</mxCell>\n\r"
 );
 
 function apigee() {
@@ -30,9 +30,9 @@ function apigee() {
     id +
     '" value="" style="' +
     fs.readFileSync("templates/apigee.svg") +
-    '" vertex="1" parent="1">' +
-    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />' +
-    "</mxCell>";
+    '" vertex="1" parent="1">\n' +
+    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />\n\r' +
+    "</mxCell>\n\r";
   return xml;
 }
 
@@ -43,17 +43,17 @@ function mdw(numero) {
   '" value="" style="' +
     fs.readFileSync("templates/mdw.svg") +
     '" vertex="1" parent="1">' +
-    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />' +
-    "</mxCell>" +
-    '<mxGeometry width="48" height="48" as="geometry" />' +
-    "</mxCell>" +
+    '<mxGeometry x="190" y="312" width="48" height="48" as="geometry" />\n\r' +
+    "</mxCell>\n\r" +
+    '<mxGeometry width="48" height="48" as="geometry" />\n\r' +
+    "</mxCell>\n\r" +
     '<mxCell id="' +
     id +
     '" value="' +
     (numero != null ? numero : "") +
-    '" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="yprXkgl_wh5ysjy9TSO6-7">' +
-    '<mxGeometry x="4" y="5.5" width="40" height="20" as="geometry" />' +
-    "</mxCell>";
+    '" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="yprXkgl_wh5ysjy9TSO6-7">\n' +
+    '<mxGeometry x="4" y="5.5" width="40" height="20" as="geometry" />\n\r' +
+    "</mxCell>\n\r";
   return xml;
 }
 

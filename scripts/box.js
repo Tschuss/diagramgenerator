@@ -17,8 +17,8 @@ function box(name) {
     size.width +
     '" height="' +
     size.height +
-    '" as="geometry" />\n' +
-    "</mxCell>\n";
+    '" as="geometry" />\n\r' +
+    "</mxCell>\n\r";
 
   return xml;
 }
@@ -34,13 +34,13 @@ function obox(name) {
   var xml =
     '<mxCell id="' +
     id_parent +
-    '" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">' +
+    '" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=2;" vertex="1" parent="1">\n' +
     '<mxGeometry x="360" y="360" width="' +
     size.width +
     '" height="' +
     (size.height + 50) +
-    '" as="geometry" />' +
-    "</mxCell>" +
+    '" as="geometry" />\n\r' +
+    "</mxCell>\n\r" +
     '<mxCell id="' +
     id_child +
     '" value="' +
@@ -52,8 +52,8 @@ function obox(name) {
     size.width +
     '" height="' +
     size.height +
-    '" as="geometry" />' +
-    "</mxCell>";
+    '" as="geometry" />\n\r' +
+    "</mxCell>\n\r";
   /*
     '<mxCell id="' +
     id +
@@ -64,8 +64,8 @@ function obox(name) {
     size.width +
     '" height="' +
     size.height +
-    '" as="geometry" />\n' +
-    "</mxCell>\n";
+    '" as="geometry" />\n\r' +
+    "</mxCell>\n\r";
 */
   return xml;
 }

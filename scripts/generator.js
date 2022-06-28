@@ -52,9 +52,15 @@ console.log("filename: " + filename);
 
 xmlfinal = processCSV("templates/application.csv");
 
+var diagramId = Date.now();
+console.log("Diagram ID: " + diagramId);
+
 fs.writeFileSync(
   path + "\\" + filename,
-  fs.readFileSync("templates/diagram-prefix.xml_") +
+  fs
+    .readFileSync("templates/diagram-prefix.xml_")
+    .toString()
+    .replace("##ID##", diagramId) +
     xmlfinal +
     fs.readFileSync("templates/diagram-sufix.xml_")
 );
@@ -65,12 +71,14 @@ function processCSV(file) {
   var applications = csv.split("\n");
   for (var i = 0; i < applications.length; i++) {
     var apps = applications[i].split(",");
-    if (apps.length != 2) {
+    if (apps.length < 2) {
       //proteccion contra lineas vacias o mal formadas
       continue;
     }
     var from = apps[0].trim();
     var to = apps[1].trim();
+    var txt = apps[2] != null ? apps[2].trim() : "";
+
     if (!ids.getID(from).exists) {
       //crear la caja
       xml += box.obox(from);
@@ -81,7 +89,7 @@ function processCSV(file) {
     }
     if (!ids.getID(from + "-" + to + "-").exists) {
       //crear flecha
-      xml += arrow.arrow(from, to, "");
+      xml += arrow.arrow(from, to, txt);
     }
   }
   return xml;
