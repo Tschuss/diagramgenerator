@@ -27,7 +27,7 @@ function obox(name) {
   var id_parent = ids.getID(name).id;
   var id_child = ids.getID(name + "-title").id;
 
-  console.log(chalk.orange("Box " + name + ": " + id_parent));
+  console.log(chalk.yellow("Box " + name + ": " + id_parent));
 
   var size = getSize(name);
 

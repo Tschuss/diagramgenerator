@@ -3,9 +3,12 @@ const chalk = require("chalk");
 const fs = require("fs");
 const box = require("./box.js");
 const arrow = require("./arrow.js");
+const icon = require("./icon.js");
 const ids = require("./id.js");
 
 const path = "diagrams";
+const APIGEE = "*APIGEE*";
+const MDW = "*MDW*";
 
 var xmlfinal = "";
 
@@ -68,17 +71,33 @@ fs.writeFileSync(
 function processCSV(file) {
   var xml = "";
   var csv = fs.readFileSync(file).toString();
-  var applications = csv.split("\n");
-  for (var i = 0; i < applications.length; i++) {
-    var apps = applications[i].split(",");
-    if (apps.length < 2) {
-      //proteccion contra lineas vacias o mal formadas
+  var line = csv.split("\n");
+  for (var i = 0; i < line.length; i++) {
+    const rx = new RegExp("(.+)-(?:|\\[(.+):(.+)\\])->(?:(.+):(.*))");
+    var parts = line[i].match(rx);
+    //console.log(parts);
+    if (parts == null || parts == "") {
+      //proteccion contra lineas mal formadas
+      console.error(line[i]);
       continue;
     }
-    var from = apps[0].trim();
-    var to = apps[1].trim();
-    var txt = apps[2] != null ? apps[2].trim() : "";
+    var from = parts[1].trim();
+    var gateway = parts[2] ? parts[2].trim() : "";
+    var desc = parts[3] ? parts[3].trim() : "";
+    var to = parts[4].trim();
+    var txt = parts[5].trim();
 
+    //console.log(from + ";" + gateway + ";" + desc + ";" + to + ";" + txt);
+
+    if (gateway != null && gateway != "") {
+      if (!ids.getID(gateway + desc).exists) {
+        if (gateway == "API") {
+          xml += icon.apigee(gateway, desc);
+        } else {
+          xml += icon.mdw(gateway, desc);
+        }
+      }
+    }
     if (!ids.getID(from).exists) {
       //crear la caja
       xml += box.obox(from);
@@ -87,8 +106,10 @@ function processCSV(file) {
       //crear la caja
       xml += box.obox(to);
     }
-    if (!ids.getID(from + "-" + to + "-").exists) {
-      //crear flecha
+    if (gateway != null && gateway != "") {
+      xml += arrow.arrow(from, gateway + desc, txt);
+      xml += arrow.arrow(gateway + desc, to, "");
+    } else {
       xml += arrow.arrow(from, to, txt);
     }
   }

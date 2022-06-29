@@ -14,13 +14,13 @@ function getIDs(from, to) {
 
   // console.log(chalk.red(to + ": " + entry));
 
-  if (entry == null || entry < 0) {
-    arrow_targets.set(to, 0);
-    return { from: idFrom, to: idTo, entry: 0 };
-  } else {
-    arrow_targets.set(to, entry + 1);
-    return { from: idFrom, to: idTo, entry: entry + 1 };
-  }
+  // if (entry == null || entry < 0) {
+  arrow_targets.set(to, 0);
+  return { from: idFrom, to: idTo, entry: 0 };
+  // } else {
+  //  arrow_targets.set(to, entry + 1);
+  //   return { from: idFrom, to: idTo, entry: entry + 1 };
+  //}
 }
 
 function getID(name, create) {
