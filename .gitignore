@@ -1,3 +1,5 @@
 diagrams
 node_modules
 scripts/*.xml
+.vscode/launch.json
+package-lock.json
