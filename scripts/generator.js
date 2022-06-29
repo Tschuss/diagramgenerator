@@ -78,7 +78,7 @@ function processCSV(file) {
     //console.log(parts);
     if (parts == null || parts == "") {
       //proteccion contra lineas mal formadas
-      console.error(line[i]);
+      if (line[1] != null && line[i] != "") console.error(line[i]);
       continue;
     }
     var from = parts[1].trim();
